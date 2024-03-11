@@ -65,7 +65,7 @@ jobs:
               cluster_name: workshop-cluster
               # The arguments that you want to pass through to the kubectl command
               args: |
-                kubectl config view
+                config view
 
         - name: Deploy
           uses: safe2008/eks-actions@v0.0.4
