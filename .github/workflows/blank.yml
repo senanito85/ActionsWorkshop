@@ -79,6 +79,4 @@ jobs:
             cluster_name: workshop-cluster
           with:
             args: |
-              kubectl set image deployment mydeploy -n default
-              mydeploy=$DOCKER_IMAGE:$DOCKER_TAG &&
-              kubectl rollout status deployment/mydeploy -n default
+              kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record &&  kubectl rollout status deployment/nginx-deployment
