@@ -65,7 +65,8 @@ jobs:
               # The name of the cluster you're using
               cluster_name: workshop-cluster
               # The arguments that you want to pass through to the kubectl command
-              # args: 
+              args: |
+                aws eks update-kubeconfig --region ap-southeast-2 --name workshop-cluster
 
         - name: View Config
           run: kubectl config view
