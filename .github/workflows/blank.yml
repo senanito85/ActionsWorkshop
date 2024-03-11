@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env: 
-  K8S_DEPLOYMENT: kubernete-bootcamp
+  K8S_DEPLOYMENT: kubernetes-bootcamp
   DOCKER_IMAGE: senanito85/golangapp
   DOCKER_TAG: latest
   K8S_NAMESPACE: default
