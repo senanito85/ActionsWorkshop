@@ -53,6 +53,12 @@ jobs:
             tags: senanito85/golangapp:latest
             context: .
 
+        - name: Update Config
+          run: aws eks update-kubeconfig --region ap-southeast-2 --name workshop-cluster
+
+        - name: View Config
+          run: kubectl config view
+
         - name: Deploy
           uses: safe2008/eks-actions@v0.0.4
           env:
