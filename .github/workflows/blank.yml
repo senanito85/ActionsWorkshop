@@ -79,4 +79,4 @@ jobs:
             cluster_name: workshop-cluster
           with:
             args: |
-              kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record &&  kubectl rollout status deployment/nginx-deployment
+              kubectl create deployment kubernetes-bootcamp --image=senanito85/golangapp:latest
