@@ -52,3 +52,16 @@ jobs:
             # tags: senanito85/golangapp:${{github.run_number}}
             tags: senanito85/golangapp:latest
             context: .
+
+        - name: Deploy
+          uses: safe2008/eks-actions@v0.0.4
+          env:
+            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws_region: ap-southeast-2
+            cluster_name: workshop-cluster
+          with:
+            args: |
+              kubectl set image deployment $K8S_DEPLOYMENT -n default
+              $K8S_DEPLOYMENT=senanito85/golangapp:latest &&
+              kubectl rollout status deployment/$K8S_DEPLOYMENT -n default
