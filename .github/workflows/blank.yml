@@ -32,10 +32,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
         with:
-          # Repository name with owner. For example, actions/checkout
           repository: senanito85/web-app-template
-          # The branch, tag or SHA to checkout. When checking out the repository that triggered a workflow, this defaults to the reference or SHA for that event.  Otherwise, uses the default branch.
 
-      - name: Run a one-line script
-        run: ls -l
               
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5.2.0
+        with:
+          push: true
+          tags: senanito85/golangapp:pipeline
+
+                
