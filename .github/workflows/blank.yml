@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v5.2.0
         with:
           push: true
-          tags: senanito85/golangapp:pipeline
+          tags: senanito85/golangapp:${{github.run_number}}
           context: .
 
                 
