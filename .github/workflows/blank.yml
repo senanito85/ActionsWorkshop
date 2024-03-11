@@ -52,5 +52,6 @@ jobs:
         with:
           push: true
           tags: senanito85/golangapp:pipeline
+          context: .
 
                 
