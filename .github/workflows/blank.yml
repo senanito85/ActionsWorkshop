@@ -37,5 +37,5 @@ jobs:
           # The branch, tag or SHA to checkout. When checking out the repository that triggered a workflow, this defaults to the reference or SHA for that event.  Otherwise, uses the default branch.
 
       - name: Run a one-line script
-        run: ls -l ./web-app-template
+        run: ls -l
               
