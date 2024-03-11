@@ -12,7 +12,10 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+env: 
+  K8S_DEPLOYMENT: dev_deployment
+  DOCKER_IMAGE: senanito85/golangapp
+  DOCKER_TAG: latest
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -77,5 +80,5 @@ jobs:
           with:
             args: |
               kubectl set image deployment $K8S_DEPLOYMENT -n default
-              $K8S_DEPLOYMENT=senanito85/golangapp:latest &&
+              $K8S_DEPLOYMENT=$DOCKER_IMAGE:$DOCKER_TAG &&
               kubectl rollout status deployment/$K8S_DEPLOYMENT -n default
