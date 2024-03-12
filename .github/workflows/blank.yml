@@ -70,7 +70,7 @@ jobs:
               aws_region: ap-southeast-2
               # The name of the cluster you're using
               cluster_name: workshop-cluster
-              # The arguments that you want to pass through to the kubectl command
+              # The arguments that you want to pass through to the kubectl command,
               args: |
                 config view
 
