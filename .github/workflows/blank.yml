@@ -37,6 +37,9 @@ jobs:
         - name: Run a one-line script
           run: ls -l 
   
+        - name: Run Go Tests
+          run: go test -v
+  
         - name: Set up QEMU
           uses: docker/setup-qemu-action@v3
   
